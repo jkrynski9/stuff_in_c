@@ -1,9 +1,8 @@
 SOURCE = main.c
-OUTPUT = out
 
 all:
-	gcc -Wall -pedantic -ansi -o $(OUTPUT) $(SOURCE)
+	gcc -Wall -pedantic -ansi $(SOURCE)
 
 clean:
-	rm $(OUTPUT)
+	rm a.out
 

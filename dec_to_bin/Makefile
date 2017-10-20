@@ -4,5 +4,5 @@ all:
 	gcc -Wall -pedantic -ansi $(SOURCE)
 
 clean:
-	rm $(OUTPUT)
+	rm a.out
 
