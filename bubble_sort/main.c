@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
-int array_size,array[1000],i,j,tmp;
+int array_size,array[1000],i,j,a,tmp;
 
 int main(int argc, char* argv[])
 {
@@ -20,7 +21,7 @@ int main(int argc, char* argv[])
 	}
 	for(i=0;i<array_size;i++)
 		array[i]=1 + rand() % 50;
-	printf("Before sort:\n");
+	printf("Before sorting:\n");
 	for(i=0;i<array_size;i++)
 	{
 		for(j=0;j<array[i];j++)
@@ -32,9 +33,8 @@ int main(int argc, char* argv[])
 		}
 		printf("\n");
 	}
-	printf("Press any key to continue");
+	printf("Press any key to continue.");
 	getchar();
-	printf("\n");
 	j=array_size-1;
 	while(j>0)
 	{
@@ -48,19 +48,19 @@ int main(int argc, char* argv[])
 			}
 		}
 		j--;
-	}
-	printf("After sort:\n");
-	for(i=0;i<array_size;i++)
-	{
-		for(j=0;j<array[i];j++)
+		printf("\e[1;1H\e[2J");
+		usleep(15000);
+		for(i=0;i<array_size;i++)
 		{
-			if(j==array[i]-1)
-				printf("%i",array[i]);
-			else
-				printf(" ");
+			for(a=0;a<array[i];a++)
+			{
+				if(a==array[i]-1)
+					printf("%i",array[i]);
+				else
+					printf(" ");
+			}
+			printf("\n");
 		}
-		printf("\n");
 	}
-	printf("\n");
 	exit(EXIT_SUCCESS);
 }
