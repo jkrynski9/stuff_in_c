@@ -1,7 +1,7 @@
 SOURCE = main.c
 
 all:
-	gcc -Wall -pedantic -ansi $(SOURCE)
+	gcc -ansi $(SOURCE)
 
 clean:
 	rm a.out
